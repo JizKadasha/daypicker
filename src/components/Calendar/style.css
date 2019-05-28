@@ -1,0 +1,131 @@
+.calendar {
+  width: 370px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.header {
+  position: relative;
+  background: #EEF7FA;
+  overflow: hidden;
+}
+
+.header__top {
+  position: relative;
+  padding: 0 60px;
+}
+
+.header__title {
+  position: relative;
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header__list {
+  display: flex;
+}
+
+.header__item {
+  font-weight: 600;
+  cursor: default;
+}
+
+.control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.control--left {
+  left: 25px;
+}
+
+.control--right {
+  right: 25px;
+}
+
+.control--left .control__item {
+  transform: rotate(135deg);
+}
+
+.control--right .control__item {
+  transform: rotate(-45deg);
+}
+
+.control__item {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+}
+
+/* PICKER */
+
+
+.day-picker__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day-picker__item, .header__item {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid transparent;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.day-picker__item:hover:not(.day-picker__item--empty), .day-picker__item--active {
+  border-color: #58AFD0;
+  background: #EEF7FA;
+}
+
+.day-picker__item--empty {
+  background: #F2F2F2;
+  cursor: default;
+}
+
+.day__tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  display: none;
+  border-radius: 6px;
+  padding: 5px 16px;
+  font-size: 12px;
+  line-height: 16px;
+  height: 16px;
+}
+
+.day__tooltip:after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 3px solid #000;
+}
+
+.day-picker__item:hover .day__tooltip, .day__tooltip:hover {
+  display: block;
+}
+
+.range {
+  background: #EEF7FA;
+  height: 40px;
+  line-height: 40px;
+}
